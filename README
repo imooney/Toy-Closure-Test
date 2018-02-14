@@ -1,0 +1,8 @@
+
+The goal of this small project is to pin down the functional dependence of foldings of various distributions. E.g. if I begin with a poisson distribution of track multiplicity in my collection of jets and randomly remove some fraction of the tracks, does the resulting distribution have a functional form? If so, is it binomial, poisson, negative binomial, or something else?
+
+The study is carried out in a toy model of increasing verisimilitude. We start with a simple delta function in multiplicity folded with a flat (i.e. pT-independent) number loss probability of 0.8, and end at the "real" scenario given by my current studies in Pythia8. Namely, we fold the particle-level charged leading-jet multiplicity (matched to a detector level jet which passes certain criteria) with the 2006 STAR pp pT-dependent tracking efficiency.
+
+Macros are located in the "src/" directory. The first to be run is "dists.C" which writes the necessary distributions to "out/dists.root" using two files located in the "in/" directory from my ongoing analysis of Pythia8 matched jets. Next, running "trackloss.C" will perform the desired efficiency on each distribution and save the results to "out/toyclosure.root". Finally, "functionfitting.C" will plot the results with functional fits, and save the pdfs to the "results/" directory.
+
+Please email fs3383@wayne.edu if you discover any critical errors.
